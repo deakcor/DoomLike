@@ -1,0 +1,47 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://prefabs/ennemi/ennemi.gd" type="Script" id=1]
+[ext_resource path="res://sprites/ennemi/Afrit/idle/FRITA1.png" type="Texture" id=2]
+[ext_resource path="res://sprites/ennemi/Afrit/idle/FRITB1.png" type="Texture" id=3]
+[ext_resource path="res://sprites/ennemi/Afrit/idle/FRITC1.png" type="Texture" id=4]
+[ext_resource path="res://sprites/ennemi/Afrit/idle/FRITD1.png" type="Texture" id=5]
+
+[sub_resource type="CapsuleShape" id=1]
+height = 2.0
+
+[sub_resource type="SpatialMaterial" id=2]
+flags_transparent = true
+flags_unshaded = true
+flags_albedo_tex_force_srgb = true
+params_billboard_mode = 1
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "New Anim",
+"speed": 5.0
+} ]
+
+[node name="ennemi" type="KinematicBody"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 3, 0 )
+shape = SubResource( 1 )
+
+[node name="sprite" type="AnimatedSprite3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0 )
+material_override = SubResource( 2 )
+pixel_size = 0.04
+frames = SubResource( 3 )
+animation = "idle"
+frame = 2
+playing = true

@@ -15,7 +15,7 @@ export(float,0.1, 3.0, 0.1) var gravity_scl = 1.0
 
 #instances ref
 onready var player_cam = $Camera
-onready var player_hand = $Arm
+#onready var player_hand = $Arm
 onready var ground_ray = $GroundRay
 onready var player_weapon =$weapon
 onready var fire_timer = $Timer
@@ -37,10 +37,11 @@ var reloading=false
 var shooting=false
 var second_fire=false
 var type_second_fire:int
+var switching=false
 var current_weapon=0
 var current_anim
-var ammo_curr=[-1,0]
-var ammo_weapon=[-1,100]
+var ammo_curr=[-1,30]
+var ammo_weapon=[-1,1000]
 var bullet_id=0
 signal s_ammo(b_count,b_max)
 signal s_reload(r_delay)
@@ -52,23 +53,25 @@ func _ready():
 	set_weapon(current_weapon)
 	
 func set_weapon(id:int):
-	can_shoot=false
-	reloading=false
-	ammo_curr[current_weapon]=bullet_count
-	var stat:Dictionary=bdd.weapons[id]
-	current_weapon=id
-	fire_rate=stat.fire_rate
-	reload_time=stat.reload_time
-	max_bullet=stat.max_bullet
-	fire_timer.wait_time = fire_rate
-	reload_timer.wait_time=reload_time
-	bullet_count = ammo_curr[id]
-	type_second_fire=stat.second_fire
-	bullet_id=stat.bullet_id
-	reset_anim()
-	current_anim=stat.anim
-	$anim_weapon.play("down")
-	_update_hud()
+	if not switching:
+		switching=true
+		can_shoot=false
+		reloading=false
+		ammo_curr[current_weapon]=bullet_count
+		var stat:Dictionary=bdd.weapons[id]
+		current_weapon=id
+		fire_rate=stat.fire_rate
+		reload_time=stat.reload_time
+		max_bullet=stat.max_bullet
+		fire_timer.wait_time = fire_rate
+		reload_timer.wait_time=reload_time
+		bullet_count = ammo_curr[id]
+		type_second_fire=stat.second_fire
+		bullet_id=stat.bullet_id
+		reset_anim()
+		current_anim=stat.anim
+		$anim_weapon.play("down")
+		_update_hud()
 
 func _physics_process(delta):
 	
@@ -115,9 +118,18 @@ func _physics_process(delta):
 				shooting=auto
 			else:
 				_reload()
-
-
-
+	test_ray()
+func test_ray():
+	var tmp=Vector2(160,84)
+	var from = player_cam.project_ray_origin(tmp)
+	var to = from + player_cam.project_ray_normal(tmp) * 10
+	var space_state = get_world().get_direct_space_state()
+	var hit = space_state.intersect_ray(from, to,[],0x1)
+	if hit.size() != 0:
+		# collider will be the node you hit
+		get_node("../MeshInstance").translation=hit.position
+	else:
+		get_node("../MeshInstance").translation=to
 func _input(event):
 	
 	if event is InputEventMouseMotion:
@@ -153,11 +165,22 @@ func _shoot():
 	player_weapon.set_frame(0)
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	var tmp=preload("res://prefabs/player_demo/projectile.tscn").instance()
-	tmp.translation=translation+Vector3(0,3.4,0)
-
-	tmp.rotation.x=player_cam.rotation.x
+	tmp.translation=translation+Vector3(0,3,0)
+	var tmppos=Vector2(160,84)
+	var from = player_cam.project_ray_origin(tmppos)
+	var to = from + player_cam.project_ray_normal(tmppos) * 100
+	var space_state = get_world().get_direct_space_state()
+	var hit = space_state.intersect_ray(from, to,[],0x1)
+	if hit.size() != 0:
+		# collider will be the node you hit
+		to=hit.position
+	
+	
+	
+	tmp.rotation.x=player_cam.rotation.x+atan2(0.4,to.distance_to(from))
 	tmp.rotation.y=rotation.y
 	tmp.id=bullet_id
+	tmp.to=to
 	get_parent().add_child(tmp)
 	
 	_update_hud()
@@ -165,7 +188,8 @@ func _update_hud():
 	emit_signal("s_ammo", bullet_count, ammo_weapon[current_weapon])
 
 func _on_Timer_timeout():
-	can_shoot = true
+	if not switching:
+		can_shoot = true
 func _axis():
 	var direction = Vector3()
 	
@@ -201,6 +225,7 @@ func _on_timer_reload_timeout():
 
 func _on_anim_weapon_animation_finished(anim_name):
 	can_shoot=true
+	switching=false
 
 func update_anim():
 	player_weapon.set_sprite_frames(current_anim)

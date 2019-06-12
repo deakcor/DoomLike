@@ -6,6 +6,6 @@ var weapons=[
 ]
 
 var bullets=[
-{"name":"","speed":10,"time":0.1},
-{"name":"","speed":100,"time":1}
+{"name":"","speed":-3,"time":0.4,"anim":preload("res://sprites/effects/effect_melee.tres")},
+{"name":"","speed":200,"time":1,"anim":preload("res://sprites/effects/effect_rifle.tres")}
 ]
