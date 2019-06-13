@@ -1,0 +1,36 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path.s3tc="res://.import/LMGRS0.png-7083be0f6a5df20e10f96f74b8658aea.s3tc.stex"
+path.etc2="res://.import/LMGRS0.png-7083be0f6a5df20e10f96f74b8658aea.etc2.stex"
+metadata={
+"imported_formats": [ "s3tc", "etc2" ],
+"vram_texture": true
+}
+
+[deps]
+
+source_file="res://sprites/weapons/light minigun/reloading/LMGRS0.png"
+dest_files=[ "res://.import/LMGRS0.png-7083be0f6a5df20e10f96f74b8658aea.s3tc.stex", "res://.import/LMGRS0.png-7083be0f6a5df20e10f96f74b8658aea.etc2.stex" ]
+
+[params]
+
+compress/mode=2
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=true
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0

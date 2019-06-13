@@ -1,16 +1,21 @@
-[gd_resource type="SpriteFrames" load_steps=12 format=2]
+[gd_resource type="SpriteFrames" load_steps=17 format=2]
 
 [ext_resource path="res://sprites/weapons/melee/0UN4A0.png" type="Texture" id=1]
-[ext_resource path="res://sprites/weapons/melee/0UN4B0.png" type="Texture" id=2]
-[ext_resource path="res://sprites/weapons/melee/0UN4C0.png" type="Texture" id=3]
-[ext_resource path="res://sprites/weapons/melee/0UN4D0.png" type="Texture" id=4]
-[ext_resource path="res://sprites/weapons/melee/0UN4H0.png" type="Texture" id=5]
-[ext_resource path="res://sprites/weapons/melee/0UNGA0.png" type="Texture" id=6]
-[ext_resource path="res://sprites/weapons/melee/0UNGB0.png" type="Texture" id=7]
-[ext_resource path="res://sprites/weapons/melee/0UNGC0.png" type="Texture" id=8]
-[ext_resource path="res://sprites/weapons/melee/0UNGF0.png" type="Texture" id=9]
-[ext_resource path="res://sprites/weapons/melee/0UNGH0.png" type="Texture" id=10]
-[ext_resource path="res://sprites/weapons/melee/0UNSB0.png" type="Texture" id=11]
+[ext_resource path="res://sprites/weapons/melee/0UNGB0.png" type="Texture" id=2]
+[ext_resource path="res://sprites/weapons/melee/0UNGC0.png" type="Texture" id=3]
+[ext_resource path="res://sprites/weapons/melee/0UNGF0.png" type="Texture" id=4]
+[ext_resource path="res://sprites/weapons/melee/0UNGH0.png" type="Texture" id=5]
+[ext_resource path="res://sprites/weapons/melee/0UNSB0.png" type="Texture" id=6]
+[ext_resource path="res://sprites/weapons/melee/0UN4B0.png" type="Texture" id=7]
+[ext_resource path="res://sprites/weapons/melee/0UN4C0.png" type="Texture" id=8]
+[ext_resource path="res://sprites/weapons/melee/0UN4D0.png" type="Texture" id=9]
+[ext_resource path="res://sprites/weapons/melee/0UN4H0.png" type="Texture" id=10]
+[ext_resource path="res://sprites/weapons/melee/0UNGA0.png" type="Texture" id=11]
+[ext_resource path="res://sprites/weapons/melee/FUCKE2.png" type="Texture" id=12]
+[ext_resource path="res://sprites/weapons/melee/FUCKF2.png" type="Texture" id=13]
+[ext_resource path="res://sprites/weapons/melee/FUCKG2.png" type="Texture" id=14]
+[ext_resource path="res://sprites/weapons/melee/FUCKH2.png" type="Texture" id=15]
+[ext_resource path="res://sprites/weapons/melee/FUCKI2.png" type="Texture" id=16]
 
 [resource]
 animations = [ {
@@ -21,11 +26,16 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
 "loop": false,
-"name": "fire1",
+"name": "fire2",
 "speed": 30.0
 }, {
 "frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
 "loop": false,
-"name": "fire2",
+"name": "fire1",
 "speed": 30.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ) ],
+"loop": false,
+"name": "fire_aiming",
+"speed": 10.0
 } ]

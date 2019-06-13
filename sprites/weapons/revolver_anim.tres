@@ -1,0 +1,62 @@
+[gd_resource type="SpriteFrames" load_steps=28 format=2]
+
+[ext_resource path="res://sprites/weapons/pistol/reloading/REVRA0.png" type="Texture" id=1]
+[ext_resource path="res://sprites/weapons/pistol/reloading/REVRB0.png" type="Texture" id=2]
+[ext_resource path="res://sprites/weapons/pistol/reloading/REVRC0.png" type="Texture" id=3]
+[ext_resource path="res://sprites/weapons/pistol/reloading/REVRD0.png" type="Texture" id=4]
+[ext_resource path="res://sprites/weapons/pistol/reloading/REVRE0.png" type="Texture" id=5]
+[ext_resource path="res://sprites/weapons/pistol/reloading/REVRF0.png" type="Texture" id=6]
+[ext_resource path="res://sprites/weapons/pistol/reloading/REVRg0.png" type="Texture" id=7]
+[ext_resource path="res://sprites/weapons/pistol/reloading/REVRh0.png" type="Texture" id=8]
+[ext_resource path="res://sprites/weapons/pistol/reloading/REVRi0.png" type="Texture" id=9]
+[ext_resource path="res://sprites/weapons/pistol/reloading/REVRj0.png" type="Texture" id=10]
+[ext_resource path="res://sprites/weapons/pistol/reloading/REVRk0.png" type="Texture" id=11]
+[ext_resource path="res://sprites/weapons/pistol/reloading/REVRl0.png" type="Texture" id=12]
+[ext_resource path="res://sprites/weapons/pistol/reloading/REVRm0.png" type="Texture" id=13]
+[ext_resource path="res://sprites/weapons/pistol/REVIA0.png" type="Texture" id=14]
+[ext_resource path="res://sprites/weapons/pistol/fire/REVFB0.png" type="Texture" id=15]
+[ext_resource path="res://sprites/weapons/pistol/fire/REVFA0.png" type="Texture" id=16]
+[ext_resource path="res://sprites/weapons/pistol/fire/REVFC0.png" type="Texture" id=17]
+[ext_resource path="res://sprites/weapons/pistol/fire/REVFD0.png" type="Texture" id=18]
+[ext_resource path="res://sprites/weapons/pistol/altfire/REVFJ0.png" type="Texture" id=19]
+[ext_resource path="res://sprites/weapons/pistol/altfire/REVFK0.png" type="Texture" id=20]
+[ext_resource path="res://sprites/weapons/pistol/altfire/REVFL0.png" type="Texture" id=21]
+[ext_resource path="res://sprites/weapons/pistol/altfire/REVFM0.png" type="Texture" id=22]
+[ext_resource path="res://sprites/weapons/pistol/altfire/REVFE0.png" type="Texture" id=23]
+[ext_resource path="res://sprites/weapons/pistol/altfire/REVFF0.png" type="Texture" id=24]
+[ext_resource path="res://sprites/weapons/pistol/altfire/REVFG0.png" type="Texture" id=25]
+[ext_resource path="res://sprites/weapons/pistol/altfire/REVFH0.png" type="Texture" id=26]
+[ext_resource path="res://sprites/weapons/pistol/altfire/REVFI0.png" type="Texture" id=27]
+
+[resource]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
+"loop": false,
+"name": "reload",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 14 ) ],
+"loop": true,
+"name": "wait",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ) ],
+"loop": false,
+"name": "fire2",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 16 ), ExtResource( 15 ), ExtResource( 17 ), ExtResource( 18 ) ],
+"loop": false,
+"name": "fire1",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ) ],
+"loop": false,
+"name": "fire_aiming",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ) ],
+"loop": false,
+"name": "aiming",
+"speed": 10.0
+} ]

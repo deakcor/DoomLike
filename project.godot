@@ -10,11 +10,23 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "KinematicBody",
+"class": "Ennemi",
+"language": "GDScript",
+"path": "res://prefabs/ennemi/ennemi.gd"
+}, {
+"base": "KinematicBody",
+"class": "Player",
+"language": "GDScript",
+"path": "res://prefabs/player_demo/Player.gd"
+}, {
+"base": "KinematicBody",
 "class": "Projectiles",
 "language": "GDScript",
 "path": "res://prefabs/player_demo/projectile.gd"
 } ]
 _global_script_class_icons={
+"Ennemi": "",
+"Player": "",
 "Projectiles": ""
 }
 

@@ -17,3 +17,9 @@ func _input(event):
 func _on_Dead_Zone_body_entered(body):
 	print("DEAD ZONE!")
 	body.translation = spawn_point.translation
+
+
+func _on_Timer_timeout():
+	var tmp=preload("res://prefabs/ennemi/ennemi.tscn").instance()
+	tmp.translation+=Vector3(randi()%100-50,0,randi()%100-50)
+	add_child(tmp)

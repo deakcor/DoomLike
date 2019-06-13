@@ -1,25 +1,54 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://prefabs/player_demo/Player.gd" type="Script" id=1]
-[ext_resource path="res://sprites/weapons/rifle_anim.tres" type="SpriteFrames" id=2]
+[ext_resource path="res://sprites/weapons/revolver_anim.tres" type="SpriteFrames" id=2]
 [ext_resource path="res://prefabs/player_demo/HUD.gd" type="Script" id=3]
 [ext_resource path="res://sprites/crosshair.png" type="Texture" id=4]
 
-[sub_resource type="CubeMesh" id=1]
+[sub_resource type="CubeMesh" id=2]
 size = Vector3( 1, 4, 1 )
 
-[sub_resource type="Environment" id=2]
+[sub_resource type="Environment" id=3]
 background_mode = 1
 background_color = Color( 0.027451, 0.027451, 0.0313726, 1 )
 glow_enabled = true
 glow_bloom = 0.04
 glow_blend_mode = 0
 
-[sub_resource type="CapsuleShape" id=3]
+[sub_resource type="CapsuleShape" id=4]
 height = 2.0
 
-[sub_resource type="Animation" id=4]
-resource_name = "down"
+[sub_resource type="Animation" id=5]
+resource_name = "dmg"
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.392157 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.392157 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "normal"
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.392157 ) ]
+}
+
+[sub_resource type="Animation" id=7]
 tracks/0/type = "value"
 tracks/0/path = NodePath("weapon:position:y")
 tracks/0/interp = 2
@@ -47,8 +76,7 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=5]
-resource_name = "normal"
+[sub_resource type="Animation" id=8]
 tracks/0/type = "value"
 tracks/0/path = NodePath("weapon:position:y")
 tracks/0/interp = 1
@@ -62,7 +90,11 @@ tracks/0/keys = {
 "values": [ 176.0 ]
 }
 
-[node name="Player" type="KinematicBody"]
+[node name="Player" type="KinematicBody" groups=[
+"player",
+]]
+collision_layer = 5
+collision_mask = 5
 script = ExtResource( 1 )
 fire_rate = 0.2
 reload_time = 2
@@ -71,24 +103,25 @@ reload_time = 2
 position = Vector2( 0, 352 )
 scale = Vector2( 1, -1 )
 frames = ExtResource( 2 )
-animation = "fire1"
-frame = 2
+animation = "reload"
+frame = 12
 playing = true
 centered = false
 flip_v = true
 
 [node name="mesh" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
-mesh = SubResource( 1 )
+visible = false
+mesh = SubResource( 2 )
 material/0 = null
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4, 0 )
-environment = SubResource( 2 )
+environment = SubResource( 3 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 2, 0 )
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="GroundRay" type="RayCast" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0 )
@@ -100,6 +133,7 @@ anchor_bottom = 1.0
 script = ExtResource( 3 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HUD"]
+visible = false
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_top = -40.0
@@ -131,18 +165,31 @@ margin_bottom = 8.0
 texture = ExtResource( 4 )
 stretch_mode = 2
 
+[node name="ColorRect" type="ColorRect" parent="HUD"]
+self_modulate = Color( 1, 1, 1, 0.392157 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 1, 0, 0, 0 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="HUD"]
+autoplay = "normal"
+playback_speed = 5.0
+anims/dmg = SubResource( 5 )
+anims/normal = SubResource( 6 )
+
 [node name="Timer" type="Timer" parent="."]
 
 [node name="timer_reload" type="Timer" parent="."]
 
 [node name="SpotLight" type="SpotLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4, -1 )
+shadow_contact = 13.59
 spot_range = 25.0
 
 [node name="anim_weapon" type="AnimationPlayer" parent="."]
 autoplay = "normal"
-anims/down = SubResource( 4 )
-anims/normal = SubResource( 5 )
+anims/down = SubResource( 7 )
+anims/normal = SubResource( 8 )
 [connection signal="s_ammo" from="." to="HUD" method="_on_Player_s_ammo"]
 [connection signal="s_reload" from="." to="." method="_on_Player_s_reload"]
 [connection signal="animation_finished" from="weapon" to="." method="_on_weapon_animation_finished"]

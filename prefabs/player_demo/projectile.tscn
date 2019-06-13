@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://prefabs/player_demo/projectile.gd" type="Script" id=1]
-[ext_resource path="res://sprites/effects/effect_melee.tres" type="SpriteFrames" id=2]
+[ext_resource path="res://sprites/effects/effect_rifle.tres" type="SpriteFrames" id=2]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 0.1, 0.1, 0.1 )
@@ -27,15 +27,14 @@ shape = SubResource( 1 )
 material_override = SubResource( 2 )
 pixel_size = 0.04
 frames = ExtResource( 2 )
-animation = "hit"
-frame = 1
+animation = "bullet"
 playing = true
 
 [node name="Timer" type="Timer" parent="."]
 
 [node name="Area" type="Area" parent="."]
 visible = false
-collision_layer = 2
+collision_layer = 4
 collision_mask = 0
 
 [node name="CollisionShape" type="CollisionShape" parent="Area"]

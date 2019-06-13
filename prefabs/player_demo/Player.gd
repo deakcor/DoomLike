@@ -1,5 +1,7 @@
 extends KinematicBody
 
+class_name Player
+
 #constants
 const GRAVITY = 9.8
 
@@ -40,9 +42,13 @@ var type_second_fire:int
 var switching=false
 var current_weapon=0
 var current_anim
-var ammo_curr=[-1,30]
-var ammo_weapon=[-1,1000]
+var extra:Dictionary
+var ammo_curr=[-1,30,5]
+var ammo_weapon=[-1,1000,1000]
 var bullet_id=0
+
+var vie=10
+var viemax=10
 signal s_ammo(b_count,b_max)
 signal s_reload(r_delay)
 
@@ -51,27 +57,31 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	ground_ray.enabled = true
 	set_weapon(current_weapon)
-	
+func set_switching(oui:bool):
+	switching=oui
 func set_weapon(id:int):
-	if not switching:
-		switching=true
-		can_shoot=false
-		reloading=false
-		ammo_curr[current_weapon]=bullet_count
-		var stat:Dictionary=bdd.weapons[id]
-		current_weapon=id
-		fire_rate=stat.fire_rate
-		reload_time=stat.reload_time
-		max_bullet=stat.max_bullet
-		fire_timer.wait_time = fire_rate
-		reload_timer.wait_time=reload_time
-		bullet_count = ammo_curr[id]
-		type_second_fire=stat.second_fire
-		bullet_id=stat.bullet_id
-		reset_anim()
-		current_anim=stat.anim
-		$anim_weapon.play("down")
-		_update_hud()
+	#if not switching:
+	switching=true
+	can_shoot=false
+	reloading=false
+	ammo_curr[current_weapon]=bullet_count
+	var stat:Dictionary=bdd.weapons[id]
+	current_weapon=id
+	auto=stat.auto
+	fire_rate=stat.fire_rate
+	reload_time=stat.reload_time
+	max_bullet=stat.max_bullet
+	fire_timer.wait_time = fire_rate
+	reload_timer.wait_time=reload_time
+	bullet_count = ammo_curr[id]
+	type_second_fire=stat.second_fire
+	bullet_id=stat.bullet_id
+	reset_anim()
+	current_anim=stat.anim
+	extra=stat.extra
+	$anim_weapon.stop()
+	$anim_weapon.play("down",0.5)
+	_update_hud()
 
 func _physics_process(delta):
 	
@@ -158,7 +168,7 @@ func _reload():
 		player_weapon.play("reload")
 		reload_timer.start()
 func _shoot():
-	if second_fire and type_second_fire==0:
+	if second_fire and (type_second_fire==0 or type_second_fire==1):
 		player_weapon.play("fire_aiming")
 	else:
 		player_weapon.play("fire"+str(randi()%2+1))
@@ -177,10 +187,11 @@ func _shoot():
 	
 	
 	
-	tmp.rotation.x=player_cam.rotation.x+atan2(0.4,to.distance_to(from))
-	tmp.rotation.y=rotation.y
-	tmp.id=bullet_id
+#	tmp.rotation.x=player_cam.rotation.x+atan2(0.4,to.distance_to(from))
+#	tmp.rotation.y=rotation.y
+	tmp.id=extra.idbullet if second_fire and extra.has("idbullet") else bullet_id 
 	tmp.to=to
+	tmp.tireur=self
 	get_parent().add_child(tmp)
 	
 	_update_hud()
@@ -229,3 +240,12 @@ func _on_anim_weapon_animation_finished(anim_name):
 
 func update_anim():
 	player_weapon.set_sprite_frames(current_anim)
+
+
+func dmg(degat:int):
+	if vie>0:
+		$HUD/AnimationPlayer.play("dmg")
+		$HUD/ColorRect.color.a=1-float(vie)/float(viemax)
+		vie=max(0,vie-degat)
+		if vie==0:
+			get_tree().reload_current_scene()
