@@ -1,8 +1,7 @@
 extends Area
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+export var id=1
+export var weapon=true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -15,4 +14,5 @@ func _ready():
 
 func _on_item_body_entered(body):
 	if body is Player:
+		body.add_ammo_weapon(id,weapon)
 		queue_free()

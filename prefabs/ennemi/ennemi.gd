@@ -8,6 +8,8 @@ var begin = Vector3()
 var end = Vector3()
 var path:Array
 var fire=false
+export var id=0
+
 var cadence=0.5
 var vie=3
 var speed=10
@@ -16,10 +18,17 @@ var idbullet=3
 func _ready():
 	nav=get_tree().get_nodes_in_group("nav").front()
 	player=get_tree().get_nodes_in_group("player").front()
+	init()
 	$Timer.wait_time=cadence
 
 	_update_path()
-
+func init():
+	var stat=bdd.ennemis[id]
+	cadence=stat.cadence
+	speed=stat.speed
+	idbullet=stat.idbullet
+	vie=stat.vie
+	$sprite.set_sprite_frames(stat.anim)
 func _update_path():
 	if vie>0:
 		$sprite.play("idle")

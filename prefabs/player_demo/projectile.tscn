@@ -25,7 +25,7 @@ shape = SubResource( 1 )
 
 [node name="sprite" type="AnimatedSprite3D" parent="."]
 material_override = SubResource( 2 )
-pixel_size = 0.04
+pixel_size = 0.05
 frames = ExtResource( 2 )
 animation = "bullet"
 playing = true

@@ -43,8 +43,9 @@ var switching=false
 var current_weapon=0
 var current_anim
 var extra:Dictionary
-var ammo_curr=[-1,30,5]
-var ammo_weapon=[-1,1000,1000]
+var ammo_curr=[-1]
+var ammo_weapon=[-1]
+var id_weapon=[0]
 var bullet_id=0
 
 var vie=10
@@ -56,24 +57,38 @@ signal s_reload(r_delay)
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	ground_ray.enabled = true
-	set_weapon(current_weapon)
+	set_weapon(id_weapon[current_weapon])
 func set_switching(oui:bool):
 	switching=oui
+
+func add_ammo_weapon(id:int,weapon:bool):
+	var tmppos=id_weapon.find_last(id)
+	if tmppos==-1 and weapon:
+		id_weapon.append(id)
+		ammo_curr.append(0)
+		ammo_weapon.append((randi()%10+1)*10)
+		set_weapon(id_weapon.size()-1)
+	else:
+		ammo_weapon[tmppos]+=(randi()%10+1)*10
+
 func set_weapon(id:int):
+	
 	#if not switching:
 	switching=true
 	can_shoot=false
 	reloading=false
 	ammo_curr[current_weapon]=bullet_count
-	var stat:Dictionary=bdd.weapons[id]
+	
 	current_weapon=id
+	id=id_weapon[current_weapon]
+	var stat:Dictionary=bdd.weapons[id]
 	auto=stat.auto
 	fire_rate=stat.fire_rate
 	reload_time=stat.reload_time
 	max_bullet=stat.max_bullet
 	fire_timer.wait_time = fire_rate
 	reload_timer.wait_time=reload_time
-	bullet_count = ammo_curr[id]
+	bullet_count = ammo_curr[current_weapon]
 	type_second_fire=stat.second_fire
 	bullet_id=stat.bullet_id
 	reset_anim()
@@ -122,7 +137,7 @@ func _physics_process(delta):
 			if bullet_count != 0:
 				reloading=false
 				bullet_count =max(-1, bullet_count-1)
-				fire_timer.start()
+				fire_timer.start(extra.fire_rate if second_fire and extra.has("fire_rate") else fire_timer.wait_time )
 				_shoot()
 				can_shoot = false
 				shooting=auto

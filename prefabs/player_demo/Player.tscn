@@ -5,20 +5,20 @@
 [ext_resource path="res://prefabs/player_demo/HUD.gd" type="Script" id=3]
 [ext_resource path="res://sprites/crosshair.png" type="Texture" id=4]
 
-[sub_resource type="CubeMesh" id=2]
+[sub_resource type="CubeMesh" id=1]
 size = Vector3( 1, 4, 1 )
 
-[sub_resource type="Environment" id=3]
+[sub_resource type="Environment" id=2]
 background_mode = 1
 background_color = Color( 0.027451, 0.027451, 0.0313726, 1 )
 glow_enabled = true
 glow_bloom = 0.04
 glow_blend_mode = 0
 
-[sub_resource type="CapsuleShape" id=4]
+[sub_resource type="CapsuleShape" id=3]
 height = 2.0
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=4]
 resource_name = "dmg"
 tracks/0/type = "value"
 tracks/0/path = NodePath("ColorRect:self_modulate")
@@ -33,7 +33,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0.392157 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.392157 ) ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=5]
 resource_name = "normal"
 tracks/0/type = "value"
 tracks/0/path = NodePath("ColorRect:self_modulate")
@@ -48,7 +48,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0.392157 ) ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=6]
 tracks/0/type = "value"
 tracks/0/path = NodePath("weapon:position:y")
 tracks/0/interp = 2
@@ -76,7 +76,7 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=7]
 tracks/0/type = "value"
 tracks/0/path = NodePath("weapon:position:y")
 tracks/0/interp = 1
@@ -112,16 +112,16 @@ flip_v = true
 [node name="mesh" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
 visible = false
-mesh = SubResource( 2 )
+mesh = SubResource( 1 )
 material/0 = null
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4, 0 )
-environment = SubResource( 3 )
+environment = SubResource( 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 2, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="GroundRay" type="RayCast" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0 )
@@ -174,8 +174,8 @@ color = Color( 1, 0, 0, 0 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="HUD"]
 autoplay = "normal"
 playback_speed = 5.0
-anims/dmg = SubResource( 5 )
-anims/normal = SubResource( 6 )
+anims/dmg = SubResource( 4 )
+anims/normal = SubResource( 5 )
 
 [node name="Timer" type="Timer" parent="."]
 
@@ -188,8 +188,8 @@ spot_range = 25.0
 
 [node name="anim_weapon" type="AnimationPlayer" parent="."]
 autoplay = "normal"
-anims/down = SubResource( 7 )
-anims/normal = SubResource( 8 )
+anims/down = SubResource( 6 )
+anims/normal = SubResource( 7 )
 [connection signal="s_ammo" from="." to="HUD" method="_on_Player_s_ammo"]
 [connection signal="s_reload" from="." to="." method="_on_Player_s_reload"]
 [connection signal="animation_finished" from="weapon" to="." method="_on_weapon_animation_finished"]

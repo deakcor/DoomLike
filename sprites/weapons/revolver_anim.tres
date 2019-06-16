@@ -18,15 +18,15 @@
 [ext_resource path="res://sprites/weapons/pistol/fire/REVFA0.png" type="Texture" id=16]
 [ext_resource path="res://sprites/weapons/pistol/fire/REVFC0.png" type="Texture" id=17]
 [ext_resource path="res://sprites/weapons/pistol/fire/REVFD0.png" type="Texture" id=18]
-[ext_resource path="res://sprites/weapons/pistol/altfire/REVFJ0.png" type="Texture" id=19]
-[ext_resource path="res://sprites/weapons/pistol/altfire/REVFK0.png" type="Texture" id=20]
-[ext_resource path="res://sprites/weapons/pistol/altfire/REVFL0.png" type="Texture" id=21]
-[ext_resource path="res://sprites/weapons/pistol/altfire/REVFM0.png" type="Texture" id=22]
-[ext_resource path="res://sprites/weapons/pistol/altfire/REVFE0.png" type="Texture" id=23]
-[ext_resource path="res://sprites/weapons/pistol/altfire/REVFF0.png" type="Texture" id=24]
-[ext_resource path="res://sprites/weapons/pistol/altfire/REVFG0.png" type="Texture" id=25]
-[ext_resource path="res://sprites/weapons/pistol/altfire/REVFH0.png" type="Texture" id=26]
-[ext_resource path="res://sprites/weapons/pistol/altfire/REVFI0.png" type="Texture" id=27]
+[ext_resource path="res://sprites/weapons/pistol/altfire/REVFE0.png" type="Texture" id=19]
+[ext_resource path="res://sprites/weapons/pistol/altfire/REVFF0.png" type="Texture" id=20]
+[ext_resource path="res://sprites/weapons/pistol/altfire/REVFG0.png" type="Texture" id=21]
+[ext_resource path="res://sprites/weapons/pistol/altfire/REVFH0.png" type="Texture" id=22]
+[ext_resource path="res://sprites/weapons/pistol/altfire/REVFI0.png" type="Texture" id=23]
+[ext_resource path="res://sprites/weapons/pistol/altfire/REVFJ0.png" type="Texture" id=24]
+[ext_resource path="res://sprites/weapons/pistol/altfire/REVFK0.png" type="Texture" id=25]
+[ext_resource path="res://sprites/weapons/pistol/altfire/REVFL0.png" type="Texture" id=26]
+[ext_resource path="res://sprites/weapons/pistol/altfire/REVFM0.png" type="Texture" id=27]
 
 [resource]
 animations = [ {
@@ -50,13 +50,13 @@ animations = [ {
 "name": "fire1",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ) ],
-"loop": false,
-"name": "fire_aiming",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ) ],
+"frames": [ ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ) ],
 "loop": false,
 "name": "aiming",
 "speed": 10.0
+}, {
+"frames": [ ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ) ],
+"loop": false,
+"name": "fire_aiming",
+"speed": 5.0
 } ]
