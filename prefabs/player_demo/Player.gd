@@ -143,18 +143,18 @@ func _physics_process(delta):
 				shooting=auto
 			else:
 				_reload()
-	test_ray()
-func test_ray():
-	var tmp=Vector2(160,84)
-	var from = player_cam.project_ray_origin(tmp)
-	var to = from + player_cam.project_ray_normal(tmp) * 10
-	var space_state = get_world().get_direct_space_state()
-	var hit = space_state.intersect_ray(from, to,[],0x1)
-	if hit.size() != 0:
-		# collider will be the node you hit
-		get_node("../MeshInstance").translation=hit.position
-	else:
-		get_node("../MeshInstance").translation=to
+#	test_ray()
+#func test_ray():
+#	var tmp=Vector2(160,84)
+#	var from = player_cam.project_ray_origin(tmp)
+#	var to = from + player_cam.project_ray_normal(tmp) * 10
+#	var space_state = get_world().get_direct_space_state()
+#	var hit = space_state.intersect_ray(from, to,[],0x1)
+#	if hit.size() != 0:
+#		# collider will be the node you hit
+#		get_node("../MeshInstance").translation=hit.position
+#	else:
+#		get_node("../MeshInstance").translation=to
 func _input(event):
 	
 	if event is InputEventMouseMotion:

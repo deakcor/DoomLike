@@ -2,24 +2,26 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/RIFLA0.png-65c866cca99e549b36d2bbdd2d972ea9.stex"
+path.s3tc="res://.import/RIFLA0.png-65c866cca99e549b36d2bbdd2d972ea9.s3tc.stex"
+path.etc2="res://.import/RIFLA0.png-65c866cca99e549b36d2bbdd2d972ea9.etc2.stex"
 metadata={
-"vram_texture": false
+"imported_formats": [ "s3tc", "etc2" ],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://sprites/weapons/rifle/RIFLA0.png"
-dest_files=[ "res://.import/RIFLA0.png-65c866cca99e549b36d2bbdd2d972ea9.stex" ]
+dest_files=[ "res://.import/RIFLA0.png-65c866cca99e549b36d2bbdd2d972ea9.s3tc.stex", "res://.import/RIFLA0.png-65c866cca99e549b36d2bbdd2d972ea9.etc2.stex" ]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=0
+flags/repeat=true
 flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
@@ -30,5 +32,5 @@ process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

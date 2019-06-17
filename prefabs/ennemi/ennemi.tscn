@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://prefabs/ennemi/ennemi.gd" type="Script" id=1]
 [ext_resource path="res://sprites/ennemi/afrit.tres" type="SpriteFrames" id=2]
@@ -12,7 +12,7 @@ flags_transparent = true
 flags_albedo_tex_force_srgb = true
 params_billboard_mode = 1
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 resource_name = "destroy"
 tracks/0/type = "value"
 tracks/0/path = NodePath("sprite:material_override:albedo_color")
@@ -65,7 +65,7 @@ tracks/3/keys = {
 "values": [ 1.0, 0.0 ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=4]
 tracks/0/type = "value"
 tracks/0/path = NodePath("sprite:material_override:albedo_color")
 tracks/0/interp = 2
@@ -79,8 +79,11 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 
+[sub_resource type="CylinderShape" id=5]
+resource_local_to_scene = true
+
 [sub_resource type="CylinderShape" id=6]
-radius = 20.0
+resource_local_to_scene = true
 
 [node name="ennemi" type="KinematicBody" groups=[
 "ennemi",
@@ -105,13 +108,13 @@ playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 playback_speed = 5.0
-anims/destroy = SubResource( 4 )
-anims/dmg = SubResource( 5 )
+anims/destroy = SubResource( 3 )
+anims/dmg = SubResource( 4 )
 
-[node name="Area" type="Area" parent="."]
+[node name="atk_area" type="Area" parent="."]
 
-[node name="CollisionShape" type="CollisionShape" parent="Area"]
-shape = SubResource( 6 )
+[node name="CollisionShape" type="CollisionShape" parent="atk_area"]
+shape = SubResource( 5 )
 
 [node name="Timer" type="Timer" parent="."]
 
@@ -119,6 +122,13 @@ shape = SubResource( 6 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1 )
 light_color = Color( 0.772549, 0.294118, 0.109804, 1 )
 omni_range = 3.0
-[connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]
-[connection signal="body_exited" from="Area" to="." method="_on_Area_body_exited"]
+
+[node name="detect_area" type="Area" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="detect_area"]
+shape = SubResource( 6 )
+[connection signal="body_entered" from="atk_area" to="." method="_on_Area_body_entered"]
+[connection signal="body_exited" from="atk_area" to="." method="_on_Area_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="body_entered" from="detect_area" to="." method="_on_detect_area_body_entered"]
+[connection signal="body_exited" from="detect_area" to="." method="_on_detect_area_body_exited"]

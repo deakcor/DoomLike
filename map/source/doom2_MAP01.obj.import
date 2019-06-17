@@ -1,0 +1,18 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/doom2_MAP01.obj-7cf26114c11b72edcfe3b7071b8ef8f7.mesh"
+
+[deps]
+
+files=[ "res://.import/doom2_MAP01.obj-7cf26114c11b72edcfe3b7071b8ef8f7.mesh" ]
+
+source_file="res://map/source/doom2_MAP01.obj"
+dest_files=[ "res://.import/doom2_MAP01.obj-7cf26114c11b72edcfe3b7071b8ef8f7.mesh", "res://.import/doom2_MAP01.obj-7cf26114c11b72edcfe3b7071b8ef8f7.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+optimize_mesh=true

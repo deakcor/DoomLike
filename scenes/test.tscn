@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/scripts/WADLevelLoader/WADLevelLoader.gd" type="Script" id=1]
+
+[node name="Spatial" type="Spatial"]
+
+[node name="Spatial" type="Spatial" parent="."]
+script = ExtResource( 1 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.793611, 0.608425, 0, -0.608425, 0.793611, 0, 20.6192, 26.7364 )

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://prefabs/player_demo/Player.gd" type="Script" id=1]
 [ext_resource path="res://sprites/weapons/revolver_anim.tres" type="SpriteFrames" id=2]
@@ -7,13 +7,6 @@
 
 [sub_resource type="CubeMesh" id=1]
 size = Vector3( 1, 4, 1 )
-
-[sub_resource type="Environment" id=2]
-background_mode = 1
-background_color = Color( 0.027451, 0.027451, 0.0313726, 1 )
-glow_enabled = true
-glow_bloom = 0.04
-glow_blend_mode = 0
 
 [sub_resource type="CapsuleShape" id=3]
 height = 2.0
@@ -56,7 +49,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5, 0.994985 ),
+"times": PoolRealArray( 0, 0.7, 0.994985 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ 176.0, 352.0, 176.0 ]
@@ -68,7 +61,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0.5 ),
+"times": PoolRealArray( 0.7 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -117,7 +110,6 @@ material/0 = null
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4, 0 )
-environment = SubResource( 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 2, 0 )
@@ -182,12 +174,14 @@ anims/normal = SubResource( 5 )
 [node name="timer_reload" type="Timer" parent="."]
 
 [node name="SpotLight" type="SpotLight" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4, -1 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4, 0 )
 shadow_contact = 13.59
-spot_range = 25.0
+spot_range = 30.0
+spot_angle = 50.0
 
 [node name="anim_weapon" type="AnimationPlayer" parent="."]
 autoplay = "normal"
+playback_speed = 2.0
 anims/down = SubResource( 6 )
 anims/normal = SubResource( 7 )
 [connection signal="s_ammo" from="." to="HUD" method="_on_Player_s_ammo"]

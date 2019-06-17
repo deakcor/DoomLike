@@ -15,5 +15,12 @@ var bullets=[
 ]
 
 var ennemis=[
-{"name":"","cadence":0.5,"vie":3,"speed":10,"idbullet":3,"anim":preload("res://sprites/ennemi/afrit.tres")}
+{"name":"","detect_area":50,"atk_area":20,"cadence":0.5,"vie":3,"speed":10,"idbullet":3,"anim":preload("res://sprites/ennemi/afrit.tres")}
+]
+
+var pickup=[
+{},
+{"anim":preload("res://sprites/weapons/pistol/RVICA0.png")},
+{"anim":preload("res://sprites/weapons/rifle/RIFLA0.png")},
+{"anim":preload("res://sprites/weapons/light minigun/pickup/LMGLZ0.png")}
 ]

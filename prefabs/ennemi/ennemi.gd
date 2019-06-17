@@ -21,14 +21,17 @@ func _ready():
 	init()
 	$Timer.wait_time=cadence
 
-	_update_path()
+	set_process(false)
 func init():
 	var stat=bdd.ennemis[id]
 	cadence=stat.cadence
 	speed=stat.speed
 	idbullet=stat.idbullet
 	vie=stat.vie
+	$detect_area/CollisionShape.get_shape().radius=stat.detect_area
+	$atk_area/CollisionShape.get_shape().radius=stat.atk_area
 	$sprite.set_sprite_frames(stat.anim)
+	$sprite.play("idle")
 func _update_path():
 	if vie>0:
 		$sprite.play("idle")
@@ -113,3 +116,15 @@ func _on_Timer_timeout():
 	if not fire:
 		_update_path()
 		$Timer.stop()
+
+
+func _on_detect_area_body_entered(body):
+	if vie>0:
+		if body is Player:
+			_update_path()
+
+
+func _on_detect_area_body_exited(body):
+	if vie>0:
+		if body is Player:
+			set_process(false)

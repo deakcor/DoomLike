@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/Game_Manager.gd" type="Script" id=1]
 [ext_resource path="res://prefabs/environment/Environment.tscn" type="PackedScene" id=2]
@@ -21,6 +21,9 @@ emission_energy = 5.0
 emission_operator = 0
 emission_on_uv2 = false
 
+[sub_resource type="Environment" id=4]
+background_mode = 1
+
 [node name="Game_Manager" type="Node"]
 script = ExtResource( 1 )
 
@@ -42,7 +45,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 35, 0 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -38.0453, 0, 0 )
+transform = Transform( 0.254395, 0, 0.9671, 0, 1, 0, -0.9671, 0, 0.254395, 27.5639, 6.5061, 64.2195 )
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.88192, 1, -16.4228 )
@@ -58,6 +61,14 @@ autostart = true
 
 [node name="item" parent="." instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -13.5823 )
+id = 3
+
+[node name="item2" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.83488 )
+id = 2
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 4 )
 [connection signal="body_entered" from="Dead_Zone" to="." method="_on_Dead_Zone_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
