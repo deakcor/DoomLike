@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/DSBGSIT2.wav-a220e5aa75595a2d1d2623eefdf86da6.sample"
+
+[deps]
+
+source_file="res://sounds/DSBGSIT2.wav"
+dest_files=[ "res://.import/DSBGSIT2.wav-a220e5aa75595a2d1d2623eefdf86da6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

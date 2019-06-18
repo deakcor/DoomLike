@@ -129,3 +129,6 @@ func _on_detect_area_body_exited(body):
 	if vie>0:
 		if body is Player:
 			set_process(false)
+func _physics_process(delta):
+	var h=$sprite.frames.get_frame($sprite.get_animation(),$sprite.get_frame()).get_height()/2
+	$sprite.translation.y=h*0.07

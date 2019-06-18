@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/DSITEMUP.wav-57c30ab9f823c62f4aad99a89b055b84.sample"
+
+[deps]
+
+source_file="res://sounds/DSITEMUP.wav"
+dest_files=[ "res://.import/DSITEMUP.wav-57c30ab9f823c62f4aad99a89b055b84.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

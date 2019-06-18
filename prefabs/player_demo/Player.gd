@@ -66,10 +66,10 @@ func add_ammo_weapon(id:int,weapon:bool):
 	if tmppos==-1 and weapon:
 		id_weapon.append(id)
 		ammo_curr.append(0)
-		ammo_weapon.append((randi()%10+1)*10)
+		ammo_weapon.append(10)
 		set_weapon(id_weapon.size()-1)
 	else:
-		ammo_weapon[tmppos]+=(randi()%10+1)*10
+		ammo_weapon[tmppos]+=10
 
 func set_weapon(id:int):
 	
@@ -137,7 +137,7 @@ func _physics_process(delta):
 			if bullet_count != 0:
 				reloading=false
 				bullet_count =max(-1, bullet_count-1)
-				fire_timer.start(extra.fire_rate if second_fire and extra.has("fire_rate") else fire_timer.wait_time )
+				fire_timer.start(extra.fire_rate if second_fire and extra.has("fire_rate") else fire_rate )
 				_shoot()
 				can_shoot = false
 				shooting=auto

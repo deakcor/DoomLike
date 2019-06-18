@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/DSSLOP.wav-cd2c9f0abb2b5f1f68e198cf98629237.sample"
+
+[deps]
+
+source_file="res://sounds/DSSLOP.wav"
+dest_files=[ "res://.import/DSSLOP.wav-cd2c9f0abb2b5f1f68e198cf98629237.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

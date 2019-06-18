@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/DSSAWIDL.wav-6a79a024bc1c7a9ff5f17fcd665b1a85.sample"
+
+[deps]
+
+source_file="res://sounds/DSSAWIDL.wav"
+dest_files=[ "res://.import/DSSAWIDL.wav-6a79a024bc1c7a9ff5f17fcd665b1a85.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

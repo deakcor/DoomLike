@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/DSBOSCUB.wav-ad9d9e3b26a1a3ef4f59c3139d707ac8.sample"
+
+[deps]
+
+source_file="res://sounds/DSBOSCUB.wav"
+dest_files=[ "res://.import/DSBOSCUB.wav-ad9d9e3b26a1a3ef4f59c3139d707ac8.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

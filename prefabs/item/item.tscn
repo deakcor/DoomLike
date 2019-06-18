@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://prefabs/item/item.gd" type="Script" id=1]
 [ext_resource path="res://sprites/weapons/pistol/RVICA0.png" type="Texture" id=2]
+[ext_resource path="res://sounds/take_weapon.wav" type="AudioStream" id=3]
 
 [sub_resource type="BoxShape" id=1]
 
@@ -47,4 +48,7 @@ texture = ExtResource( 2 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "loop"
 anims/loop = SubResource( 3 )
+
+[node name="audio" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 3 )
 [connection signal="body_entered" from="." to="." method="_on_item_body_entered"]

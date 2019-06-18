@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/DSWPNUP.wav-c9e271817c761629c120460eb2cf5dbe.sample"
+
+[deps]
+
+source_file="res://sounds/DSWPNUP.wav"
+dest_files=[ "res://.import/DSWPNUP.wav-c9e271817c761629c120460eb2cf5dbe.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/DSSAWFUL.wav-4eb4487252998c49724aabdae9c15d79.sample"
+
+[deps]
+
+source_file="res://sounds/DSSAWFUL.wav"
+dest_files=[ "res://.import/DSSAWFUL.wav-4eb4487252998c49724aabdae9c15d79.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

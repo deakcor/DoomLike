@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/DSSPIDTH.wav-29eaf7235e6b4652aea3bab6a4382657.sample"
+
+[deps]
+
+source_file="res://sounds/DSSPIDTH.wav"
+dest_files=[ "res://.import/DSSPIDTH.wav-29eaf7235e6b4652aea3bab6a4382657.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

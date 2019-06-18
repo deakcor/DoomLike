@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/DSPOSIT1.wav-599b6669e493a83ac13646c989795367.sample"
+
+[deps]
+
+source_file="res://sounds/DSPOSIT1.wav"
+dest_files=[ "res://.import/DSPOSIT1.wav-599b6669e493a83ac13646c989795367.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

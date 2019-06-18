@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/DSBGDTH1.wav-41887ef30e67c957a82f407f5ae48b21.sample"
+
+[deps]
+
+source_file="res://sounds/DSBGDTH1.wav"
+dest_files=[ "res://.import/DSBGDTH1.wav-41887ef30e67c957a82f407f5ae48b21.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

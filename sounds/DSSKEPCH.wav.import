@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/DSSKEPCH.wav-2a75c0d49d27e6f6341cc82a32a7c7c1.sample"
+
+[deps]
+
+source_file="res://sounds/DSSKEPCH.wav"
+dest_files=[ "res://.import/DSSKEPCH.wav-2a75c0d49d27e6f6341cc82a32a7c7c1.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/DSSGTSIT.wav-b38d914b50c96c19d6e8e75e41bd4734.sample"
+
+[deps]
+
+source_file="res://sounds/DSSGTSIT.wav"
+dest_files=[ "res://.import/DSSGTSIT.wav-b38d914b50c96c19d6e8e75e41bd4734.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

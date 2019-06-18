@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/DSFIRXPL.wav-6ce74c0812a6e4ef4da1c1bf92b9b471.sample"
+
+[deps]
+
+source_file="res://sounds/DSFIRXPL.wav"
+dest_files=[ "res://.import/DSFIRXPL.wav-6ce74c0812a6e4ef4da1c1bf92b9b471.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

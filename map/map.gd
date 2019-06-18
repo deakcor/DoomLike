@@ -35,12 +35,12 @@ func _on_Timer_timeout():
 
 func _input(event):
 	if event.is_action_pressed("action"):
-		if doorplayer:
-			$door/AnimationPlayer.play("door",1)
+		if doorplayer and !$door/AnimationPlayer.is_playing():
+			$door/AnimationPlayer.play("door")
 		elif wallplayer:
-			$door/AnimationPlayer.play("wall",1)
+			$door/AnimationPlayer.play("wall")
 		elif wall2player:
-			$door/AnimationPlayer.play("wall2",1)
+			$door/AnimationPlayer.play("wall2")
 func _on_door_area_body_entered(body):
 	if body is Player:
 		doorplayer=true

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/DSPISTOL.wav-1b4bf8349f865a9c7ed7f81bd97d4669.sample"
+
+[deps]
+
+source_file="res://sounds/DSPISTOL.wav"
+dest_files=[ "res://.import/DSPISTOL.wav-1b4bf8349f865a9c7ed7f81bd97d4669.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

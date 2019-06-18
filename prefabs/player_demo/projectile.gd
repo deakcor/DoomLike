@@ -20,7 +20,8 @@ func _ready():
 	#translation+=dir*2
 	$sprite.set_sprite_frames(stat.anim)
 	$sprite.play("bullet")
-	#set_collision_layer_bit(0,
+	$audio_fire.stream=stat.sound
+	$audio_fire.playing=true
 	
 func _physics_process(delta):
 	if speed>0:

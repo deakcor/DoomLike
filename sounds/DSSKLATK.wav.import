@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/DSSKLATK.wav-de08137f8b0798fd23a3a0e8685e8a3b.sample"
+
+[deps]
+
+source_file="res://sounds/DSSKLATK.wav"
+dest_files=[ "res://.import/DSSKLATK.wav-de08137f8b0798fd23a3a0e8685e8a3b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

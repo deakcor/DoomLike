@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/Game_Manager.gd" type="Script" id=1]
 [ext_resource path="res://prefabs/environment/Environment.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://prefabs/ennemi/ennemi.tscn" type="PackedScene" id=4]
 [ext_resource path="res://prefabs/item/item.tscn" type="PackedScene" id=5]
 [ext_resource path="res://default_env.tres" type="Environment" id=6]
+[ext_resource path="res://sounds/music.ogg" type="AudioStream" id=7]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 300, 1, 300 )
@@ -54,6 +55,30 @@ material/0 = SubResource( 3 )
 [node name="ennemi" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -112.276, -3, 0 )
 
+[node name="ennemi5" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.86245, 4.17807, 111.898 )
+id = 1
+
+[node name="ennemi6" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.2296, 4.17807, 111.898 )
+id = 1
+
+[node name="ennemi7" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.59633, 7.13489, 141.416 )
+id = 1
+
+[node name="ennemi8" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -43.0088, 7.13489, 258.952 )
+id = 1
+
+[node name="ennemi9" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -48.5172, 7.13489, 253.747 )
+id = 1
+
+[node name="ennemi10" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.312, 7.13489, 241.937 )
+id = 1
+
 [node name="ennemi2" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -42.574, -3, -22.583 )
 
@@ -67,18 +92,94 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -71.963, -3, -6.884 )
 wait_time = 2.0
 
 [node name="item" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -126.454, 6.32048, 86.5184 )
-id = 3
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -123.212, 6.32048, 86.5184 )
+id = 4
+
+[node name="item9" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -127.18, 6.32048, 86.5184 )
+id = 4
+weapon = false
+
+[node name="item10" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -127.18, 6.32048, 88.2031 )
+id = 4
+weapon = false
+
+[node name="item11" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -127.18, 6.32048, 84.5081 )
+id = 4
+weapon = false
+
+[node name="item12" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -64.4569, 6.32048, 158.251 )
+id = 2
+weapon = false
+
+[node name="item13" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -64.4569, 6.32048, 161.59 )
+id = 2
+weapon = false
+
+[node name="item14" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -64.4569, 6.32048, 164.47 )
+id = 2
+weapon = false
+
+[node name="item15" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.2831, 6.32048, 164.47 )
+id = 2
+weapon = false
+
+[node name="item16" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.2831, 6.32048, 161.6 )
+id = 2
+weapon = false
+
+[node name="item17" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.2831, 6.32048, 158.761 )
+id = 2
+weapon = false
+
+[node name="item18" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -57.7471, 6.32048, 161.59 )
+id = 2
 
 [node name="item3" parent="." instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 48.4493, 6.8993, 84.4857 )
 
 [node name="item2" parent="." instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -57.0113, 6.6824, 260.747 )
-id = 2
+id = 3
+
+[node name="item4" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -59.5025, 6.6824, 260.747 )
+id = 3
+weapon = false
+
+[node name="item7" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.1135, 6.6824, 246.53 )
+weapon = false
+
+[node name="item8" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.1135, 6.6824, 235.068 )
+weapon = false
+
+[node name="item5" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -57.0189, 6.6824, 263.574 )
+id = 3
+weapon = false
+
+[node name="item6" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -59.3112, 6.6824, 263.574 )
+id = 3
+weapon = false
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 6 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+autoplay = true
 [connection signal="body_entered" from="Dead_Zone" to="." method="_on_Dead_Zone_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
