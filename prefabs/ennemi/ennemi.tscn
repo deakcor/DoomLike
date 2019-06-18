@@ -103,7 +103,6 @@ pixel_size = 0.05
 shaded = true
 frames = ExtResource( 2 )
 animation = "atk"
-frame = 2
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

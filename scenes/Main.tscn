@@ -67,14 +67,14 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -71.963, -3, -6.884 )
 wait_time = 2.0
 
 [node name="item" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.04052, 15.6256, 66.5472 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -126.454, 6.32048, 86.5184 )
 id = 3
 
 [node name="item3" parent="." instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 48.4493, 6.8993, 84.4857 )
 
 [node name="item2" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.0898, 6.6824, 238.165 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -57.0113, 6.6824, 260.747 )
 id = 2
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]

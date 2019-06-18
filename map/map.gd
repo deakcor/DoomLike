@@ -3,7 +3,9 @@ extends StaticBody
 onready var map=$MAP01
 
 var player:Player
-# Called when the node enters the scene tree for the first time.
+var doorplayer:bool=false
+var wallplayer:bool=false
+var wall2player:bool=false
 func _ready():
 	var count=map.get_surface_material_count()
 	var mesh=map.get_mesh()
@@ -30,3 +32,40 @@ func _on_Area_body_exited(body):
 func _on_Timer_timeout():
 	if player!=null:
 		player.dmg(1)
+
+func _input(event):
+	if event.is_action_pressed("action"):
+		if doorplayer:
+			$door/AnimationPlayer.play("door",1)
+		elif wallplayer:
+			$door/AnimationPlayer.play("wall",1)
+		elif wall2player:
+			$door/AnimationPlayer.play("wall2",1)
+func _on_door_area_body_entered(body):
+	if body is Player:
+		doorplayer=true
+
+
+func _on_door_area_body_exited(body):
+	if body is Player:
+		doorplayer=false
+
+
+func _on_wall_area_body_entered(body):
+	if body is Player:
+		wallplayer=true
+
+
+func _on_wall_area_body_exited(body):
+	if body is Player:
+		wallplayer=false
+
+
+func _on_wall2_area_body_entered(body):
+	if body is Player:
+		wall2player=true
+
+
+func _on_wall2_area_body_exited(body):
+	if body is Player:
+		wallplayer=false
