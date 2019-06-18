@@ -10,7 +10,7 @@ export(float,0.1,1.0) var sensitivity_x = 0.5
 export(float,0.1,1.0) var sensitivity_y = 0.4
 
 #physics
-export(float,10.0, 30.0) var speed = 15.0
+export(float,10.0, 30.0) var speed = 25.0
 export(float,10.0, 50.0) var jump_height = 25
 export(float,1.0, 10.0) var mass = 8.0
 export(float,0.1, 3.0, 0.1) var gravity_scl = 1.0

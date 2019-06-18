@@ -2,6 +2,7 @@ extends KinematicBody
 
 class_name Ennemi
 
+
 var nav:Navigation
 var player
 var begin = Vector3()
