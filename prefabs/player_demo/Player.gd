@@ -40,6 +40,7 @@ var shooting=false
 var second_fire=false
 var type_second_fire:int
 var switching=false
+var havekey=false
 var current_weapon=0
 var current_anim
 var extra:Dictionary

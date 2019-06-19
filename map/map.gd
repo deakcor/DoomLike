@@ -6,6 +6,7 @@ var player:Player
 var doorplayer:bool=false
 var wallplayer:bool=false
 var wall2player:bool=false
+var bigdoorplayer:int
 func _ready():
 	var count=map.get_surface_material_count()
 	var mesh=map.get_mesh()
@@ -41,6 +42,10 @@ func _input(event):
 			$door/AnimationPlayer.play("wall")
 		elif wall2player:
 			$door/AnimationPlayer.play("wall2")
+		elif bigdoorplayer==2:
+			pass
+		elif bigdoorplayer==1:
+			pass
 func _on_door_area_body_entered(body):
 	if body is Player:
 		doorplayer=true
@@ -69,3 +74,15 @@ func _on_wall2_area_body_entered(body):
 func _on_wall2_area_body_exited(body):
 	if body is Player:
 		wallplayer=false
+
+
+func _on_bigdoor_area_body_entered(body):
+	if body is Player:
+		if body.havekey:
+			bigdoorplayer=2
+		else:
+			bigdoorplayer=1
+
+func _on_bigdoor_area_body_exited(body):
+	if body is Player:
+		bigdoorplayer=0

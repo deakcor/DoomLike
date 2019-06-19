@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://prefabs/ennemi/ennemi.gd" type="Script" id=1]
-[ext_resource path="res://sprites/ennemi/zombie.tres" type="SpriteFrames" id=2]
+[ext_resource path="res://sprites/ennemi/pyrobaron.tres" type="SpriteFrames" id=2]
+[ext_resource path="res://sounds/DSBRSDTH.wav" type="AudioStream" id=3]
 
 [sub_resource type="CapsuleShape" id=1]
 height = 4.0
@@ -13,7 +14,6 @@ flags_albedo_tex_force_srgb = true
 params_billboard_mode = 1
 
 [sub_resource type="Animation" id=3]
-resource_name = "destroy"
 tracks/0/type = "value"
 tracks/0/path = NodePath("sprite:material_override:albedo_color")
 tracks/0/interp = 2
@@ -79,10 +79,10 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="CylinderShape" id=5]
+[sub_resource type="SphereShape" id=5]
 resource_local_to_scene = true
 
-[sub_resource type="CylinderShape" id=6]
+[sub_resource type="SphereShape" id=6]
 resource_local_to_scene = true
 
 [node name="ennemi" type="KinematicBody" groups=[
@@ -102,8 +102,8 @@ material_override = SubResource( 2 )
 pixel_size = 0.07
 shaded = true
 frames = ExtResource( 2 )
-animation = "death1"
-frame = 10
+animation = "death2"
+frame = 17
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -127,6 +127,9 @@ omni_range = 3.0
 
 [node name="CollisionShape" type="CollisionShape" parent="detect_area"]
 shape = SubResource( 6 )
+
+[node name="audio_die" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 3 )
 [connection signal="body_entered" from="atk_area" to="." method="_on_Area_body_entered"]
 [connection signal="body_exited" from="atk_area" to="." method="_on_Area_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

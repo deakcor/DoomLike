@@ -1,0 +1,36 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path.s3tc="res://.import/SBLLL0.png-92b2c0cc7181d774652fb24f8446c30b.s3tc.stex"
+path.etc2="res://.import/SBLLL0.png-92b2c0cc7181d774652fb24f8446c30b.etc2.stex"
+metadata={
+"imported_formats": [ "s3tc", "etc2" ],
+"vram_texture": true
+}
+
+[deps]
+
+source_file="res://sprites/ennemi/pyro baron/effects/SBLLL0.png"
+dest_files=[ "res://.import/SBLLL0.png-92b2c0cc7181d774652fb24f8446c30b.s3tc.stex", "res://.import/SBLLL0.png-92b2c0cc7181d774652fb24f8446c30b.etc2.stex" ]
+
+[params]
+
+compress/mode=2
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=true
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0

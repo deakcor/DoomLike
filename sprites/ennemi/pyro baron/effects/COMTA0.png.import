@@ -1,0 +1,36 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path.s3tc="res://.import/COMTA0.png-022cb6d8a32cb733642e0766d1ec6b7f.s3tc.stex"
+path.etc2="res://.import/COMTA0.png-022cb6d8a32cb733642e0766d1ec6b7f.etc2.stex"
+metadata={
+"imported_formats": [ "s3tc", "etc2" ],
+"vram_texture": true
+}
+
+[deps]
+
+source_file="res://sprites/ennemi/pyro baron/effects/COMTA0.png"
+dest_files=[ "res://.import/COMTA0.png-022cb6d8a32cb733642e0766d1ec6b7f.s3tc.stex", "res://.import/COMTA0.png-022cb6d8a32cb733642e0766d1ec6b7f.etc2.stex" ]
+
+[params]
+
+compress/mode=2
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=true
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0

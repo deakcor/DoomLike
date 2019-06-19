@@ -1,0 +1,36 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path.s3tc="res://.import/DECLC0.png-28be75c3994a7c9667037537534c0195.s3tc.stex"
+path.etc2="res://.import/DECLC0.png-28be75c3994a7c9667037537534c0195.etc2.stex"
+metadata={
+"imported_formats": [ "s3tc", "etc2" ],
+"vram_texture": true
+}
+
+[deps]
+
+source_file="res://sprites/ennemi/pyro baron/effects/DECLC0.png"
+dest_files=[ "res://.import/DECLC0.png-28be75c3994a7c9667037537534c0195.s3tc.stex", "res://.import/DECLC0.png-28be75c3994a7c9667037537534c0195.etc2.stex" ]
+
+[params]
+
+compress/mode=2
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=true
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0

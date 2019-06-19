@@ -33,6 +33,8 @@ func init():
 	$atk_area/CollisionShape.get_shape().radius=stat.atk_area
 	$sprite.set_sprite_frames(stat.anim)
 	$sprite.play("idle")
+	if id==3:
+		$sprite.pixel_size=0.1
 func _update_path():
 	if vie>0:
 		$sprite.play("idle")
@@ -81,6 +83,7 @@ func dmg(degat:int):
 		vie=max(0,vie-degat)
 		$AnimationPlayer.play("dmg")
 		if vie==0:
+			$audio_die.playing=true
 			$AnimationPlayer.play("destroy",0.5,0.01)
 			$Timer.stop()
 			set_process(false)
@@ -97,7 +100,7 @@ func _on_Area_body_entered(body):
 
 func _shoot():
 	var tmp=preload("res://prefabs/player_demo/projectile.tscn").instance()
-	tmp.translation=translation+Vector3(0,3,0)
+	tmp.translation=translation+Vector3(0,$sprite.translation.y*2,0)
 	tmp.id=idbullet
 	tmp.to=player.translation+Vector3(0,3,0)
 	tmp.tireur=self
@@ -130,5 +133,7 @@ func _on_detect_area_body_exited(body):
 		if body is Player:
 			set_process(false)
 func _physics_process(delta):
-	var h=$sprite.frames.get_frame($sprite.get_animation(),$sprite.get_frame()).get_height()/2
-	$sprite.translation.y=h*0.07
+	if $sprite.frames.get_frame($sprite.get_animation(),$sprite.get_frame())!=null:
+		var h=$sprite.frames.get_frame($sprite.get_animation(),$sprite.get_frame()).get_height()/2
+		$sprite.translation.y=h*$sprite.pixel_size
+		$CollisionShape.translation.y=h*3/2*$sprite.pixel_size

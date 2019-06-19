@@ -12,14 +12,17 @@ var bullets=[
 {"name":"fist","dmg":1,"speed":-3,"time":0.4,"anim":preload("res://sprites/effects/effect_melee.tres"),"sound":preload("res://sounds/DSPUNCH.wav")},
 {"name":"9mm","dmg":1,"speed":200,"time":1,"anim":preload("res://sprites/effects/effect_rifle.tres"),"sound":preload("res://sounds/DSPISTOL.wav")},
 {"name":"7mm","dmg":2,"speed":200,"time":1,"anim":preload("res://sprites/effects/effect_rifle.tres"),"sound":preload("res://sounds/DSSHOTGN.wav")},
-{"name":"fire","dmg":1,"speed":50,"time":5,"anim":preload("res://sprites/effects/effect_fire.tres"),"sound":preload("res://sounds/DSSKEATK.wav")},
+{"name":"fire","dmg":1,"speed":50,"time":5,"anim":preload("res://sprites/effects/effect_fire.tres"),"sound":preload("res://sounds/bouledefeu.wav")},
 {"name":"plasma","dmg":2,"speed":100,"time":2,"anim":preload("res://sprites/effects/plasma.tres"),"sound":preload("res://sounds/DSPLASMA.wav")},
-{"name":"giga plasma","dmg":4,"speed":50,"time":5,"anim":preload("res://sprites/effects/plasma2.tres"),"sound":preload("res://sounds/DSPLASMA.wav")}
+{"name":"giga plasma","dmg":4,"speed":50,"time":5,"anim":preload("res://sprites/effects/plasma2.tres"),"sound":preload("res://sounds/DSPLASMA.wav")},
+{"name":"gigafire","dmg":4,"speed":25,"time":10,"anim":preload("res://sprites/effects/gigafire.tres"),"sound":preload("res://sounds/gigabouledefeu.wav")}
 ]
 
 var ennemis=[
 {"name":"","detect_area":50,"atk_area":20,"cadence":0.5,"vie":4,"speed":10,"idbullet":3,"anim":preload("res://sprites/ennemi/afrit.tres")},
-{"name":"","detect_area":50,"atk_area":2,"cadence":0.1,"vie":2,"speed":20,"idbullet":0,"anim":preload("res://sprites/ennemi/zombie.tres")}
+{"name":"","detect_area":50,"atk_area":2,"cadence":0.1,"vie":2,"speed":20,"idbullet":0,"anim":preload("res://sprites/ennemi/zombie.tres")},
+{"name":"","detect_area":50,"atk_area":30,"cadence":0.5,"vie":3,"speed":5,"idbullet":5,"anim":preload("res://sprites/ennemi/darkimp.tres")},
+{"name":"","detect_area":100,"atk_area":100,"cadence":1,"vie":20,"speed":5,"idbullet":5,"anim":preload("res://sprites/ennemi/pyrobaron.tres")}
 ]
 
 var pickup=[

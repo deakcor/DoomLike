@@ -365,6 +365,8 @@ shape = SubResource( 16 )
 [node name="CollisionShape" type="CollisionShape" parent="bigdoor/bigdoor_area"]
 shape = SubResource( 17 )
 
+[node name="audio_bigdoor" type="AudioStreamPlayer3D" parent="bigdoor"]
+
 [node name="wall2" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1202.16, 57.7457, 844.922 )
 mesh = SubResource( 19 )
@@ -409,5 +411,7 @@ shape = SubResource( 24 )
 [connection signal="body_exited" from="door/door_area" to="." method="_on_door_area_body_exited"]
 [connection signal="body_entered" from="wall/wall_area" to="." method="_on_wall_area_body_entered"]
 [connection signal="body_exited" from="wall/wall_area" to="." method="_on_wall_area_body_exited"]
+[connection signal="body_entered" from="bigdoor/bigdoor_area" to="." method="_on_bigdoor_area_body_entered"]
+[connection signal="body_exited" from="bigdoor/bigdoor_area" to="." method="_on_bigdoor_area_body_exited"]
 [connection signal="body_entered" from="wall2/wall2_area" to="." method="_on_wall2_area_body_entered"]
 [connection signal="body_exited" from="wall2/wall2_area" to="." method="_on_wall2_area_body_exited"]

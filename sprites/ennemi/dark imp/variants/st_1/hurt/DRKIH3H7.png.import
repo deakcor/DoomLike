@@ -1,0 +1,36 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path.s3tc="res://.import/DRKIH3H7.png-9980475f637d20187986a678d2877daf.s3tc.stex"
+path.etc2="res://.import/DRKIH3H7.png-9980475f637d20187986a678d2877daf.etc2.stex"
+metadata={
+"imported_formats": [ "s3tc", "etc2" ],
+"vram_texture": true
+}
+
+[deps]
+
+source_file="res://sprites/ennemi/dark imp/variants/st_1/hurt/DRKIH3H7.png"
+dest_files=[ "res://.import/DRKIH3H7.png-9980475f637d20187986a678d2877daf.s3tc.stex", "res://.import/DRKIH3H7.png-9980475f637d20187986a678d2877daf.etc2.stex" ]
+
+[params]
+
+compress/mode=2
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=true
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0
