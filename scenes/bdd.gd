@@ -19,10 +19,10 @@ var bullets=[
 ]
 
 var ennemis=[
-{"name":"","detect_area":50,"atk_area":20,"cadence":0.5,"vie":4,"speed":10,"idbullet":3,"anim":preload("res://sprites/ennemi/afrit.tres")},
-{"name":"","detect_area":50,"atk_area":2,"cadence":0.1,"vie":2,"speed":20,"idbullet":0,"anim":preload("res://sprites/ennemi/zombie.tres")},
-{"name":"","detect_area":50,"atk_area":30,"cadence":0.5,"vie":3,"speed":5,"idbullet":5,"anim":preload("res://sprites/ennemi/darkimp.tres")},
-{"name":"","detect_area":100,"atk_area":100,"cadence":1,"vie":20,"speed":5,"idbullet":5,"anim":preload("res://sprites/ennemi/pyrobaron.tres")}
+{"name":"Afrit","light":true,"detect_area":50,"atk_area":20,"cadence":0.5,"vie":4,"speed":10,"idbullet":3,"anim":preload("res://sprites/ennemi/afrit.tres")},
+{"name":"Zombie","light":false,"detect_area":50,"atk_area":2,"cadence":0.1,"vie":2,"speed":20,"idbullet":0,"anim":preload("res://sprites/ennemi/zombie.tres")},
+{"name":"Dark imp","light":false,"detect_area":50,"atk_area":30,"cadence":0.5,"vie":3,"speed":5,"idbullet":5,"anim":preload("res://sprites/ennemi/darkimp.tres")},
+{"name":"Pyro baron","light":true,"detect_area":100,"atk_area":100,"cadence":1,"vie":20,"speed":5,"idbullet":6,"anim":preload("res://sprites/ennemi/pyrobaron.tres")}
 ]
 
 var pickup=[

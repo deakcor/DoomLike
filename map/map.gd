@@ -38,14 +38,16 @@ func _input(event):
 	if event.is_action_pressed("action"):
 		if doorplayer and !$door/AnimationPlayer.is_playing():
 			$door/AnimationPlayer.play("door")
-		elif wallplayer:
+		if wallplayer:
 			$door/AnimationPlayer.play("wall")
-		elif wall2player:
+		if wall2player:
 			$door/AnimationPlayer.play("wall2")
-		elif bigdoorplayer==2:
-			pass
-		elif bigdoorplayer==1:
-			pass
+		
+		if bigdoorplayer==2:
+			get_tree().change_scene("res://prefabs/end.tscn")
+		if bigdoorplayer==1:
+			$bigdoor/audio_bigdoor.playing=true
+		print(bigdoorplayer)
 func _on_door_area_body_entered(body):
 	if body is Player:
 		doorplayer=true

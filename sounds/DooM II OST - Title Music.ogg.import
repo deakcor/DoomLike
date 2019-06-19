@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/DooM II OST - Title Music.ogg-bb793f5ce017e611ee3f7fd06bf7a7ca.oggstr"
+
+[deps]
+
+source_file="res://sounds/DooM II OST - Title Music.ogg"
+dest_files=[ "res://.import/DooM II OST - Title Music.ogg-bb793f5ce017e611ee3f7fd06bf7a7ca.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

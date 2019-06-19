@@ -33,6 +33,7 @@ func init():
 	$atk_area/CollisionShape.get_shape().radius=stat.atk_area
 	$sprite.set_sprite_frames(stat.anim)
 	$sprite.play("idle")
+	$OmniLight.visible=stat.light
 	if id==3:
 		$sprite.pixel_size=0.1
 func _update_path():
@@ -89,6 +90,11 @@ func dmg(degat:int):
 			set_process(false)
 			$CollisionShape.disabled=true
 			$sprite.play("death"+str(randi()%2+1))
+			if id==3:
+				var tmp=preload("res://prefabs/item/key.tscn").instance()
+				tmp.translation=translation+Vector3(0,$sprite.translation.y,0)
+				
+				get_parent().add_child(tmp)
 
 func _on_Area_body_entered(body):
 	if vie>0:
